@@ -21,8 +21,8 @@ namespace ResortReview
     {
         Thread t;
         private int mov, movX, movY;
-        private static bool hide = false;
-        private static bool hidePass = true;
+        private bool hide = false;
+        private bool hidePass = true;
         private static string path = "admin.json";
 
 

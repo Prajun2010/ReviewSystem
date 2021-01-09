@@ -45,8 +45,6 @@
             this.CustomerName = new System.Windows.Forms.Label();
             this.PersonalInfo = new System.Windows.Forms.Label();
             this.RatingLayout = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.RatingLbl = new System.Windows.Forms.Label();
             this.SuggesstionLayout = new System.Windows.Forms.FlowLayoutPanel();
             this.SuggesstionLbl = new System.Windows.Forms.Label();
             this.suggestionBox = new System.Windows.Forms.TextBox();
@@ -54,14 +52,15 @@
             this.miniTip = new System.Windows.Forms.ToolTip(this.components);
             this.SubmitBtn = new System.Windows.Forms.Button();
             this.cutomerBanner = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.RatingLbl = new System.Windows.Forms.Label();
             this.customerControlBox.SuspendLayout();
             this.queryLayout.SuspendLayout();
             this.queryHeader.SuspendLayout();
             this.PersonalInfoPanel.SuspendLayout();
-            this.RatingLayout.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuggesstionLayout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cutomerBanner)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // customerControlBox
@@ -126,11 +125,11 @@
             this.queryLayout.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.queryLayout.Controls.Add(this.queryHeader);
             this.queryLayout.Controls.Add(this.PersonalInfoPanel);
-            this.queryLayout.Controls.Add(this.RatingLayout);
+            this.queryLayout.Controls.Add(this.panel2);
             this.queryLayout.Controls.Add(this.SuggesstionLayout);
             this.queryLayout.Location = new System.Drawing.Point(59, 212);
             this.queryLayout.Name = "queryLayout";
-            this.queryLayout.Size = new System.Drawing.Size(552, 564);
+            this.queryLayout.Size = new System.Drawing.Size(552, 565);
             this.queryLayout.TabIndex = 1;
             // 
             // queryHeader
@@ -248,32 +247,12 @@
             // 
             // RatingLayout
             // 
+            this.RatingLayout.AutoScroll = true;
             this.RatingLayout.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.RatingLayout.Controls.Add(this.panel1);
-            this.RatingLayout.Location = new System.Drawing.Point(3, 226);
+            this.RatingLayout.Location = new System.Drawing.Point(3, 30);
             this.RatingLayout.Name = "RatingLayout";
-            this.RatingLayout.Size = new System.Drawing.Size(544, 190);
+            this.RatingLayout.Size = new System.Drawing.Size(538, 157);
             this.RatingLayout.TabIndex = 2;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.RatingLbl);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(541, 28);
-            this.panel1.TabIndex = 10;
-            // 
-            // RatingLbl
-            // 
-            this.RatingLbl.AutoSize = true;
-            this.RatingLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RatingLbl.ForeColor = System.Drawing.Color.DimGray;
-            this.RatingLbl.Location = new System.Drawing.Point(3, 0);
-            this.RatingLbl.Name = "RatingLbl";
-            this.RatingLbl.Size = new System.Drawing.Size(75, 24);
-            this.RatingLbl.TabIndex = 9;
-            this.RatingLbl.Text = "Rating ";
-            this.RatingLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // SuggesstionLayout
             // 
@@ -282,7 +261,7 @@
             this.SuggesstionLayout.Controls.Add(this.suggestionBox);
             this.SuggesstionLayout.Location = new System.Drawing.Point(3, 422);
             this.SuggesstionLayout.Name = "SuggesstionLayout";
-            this.SuggesstionLayout.Size = new System.Drawing.Size(544, 143);
+            this.SuggesstionLayout.Size = new System.Drawing.Size(544, 142);
             this.SuggesstionLayout.TabIndex = 3;
             // 
             // SuggesstionLbl
@@ -315,7 +294,7 @@
             this.SubmitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SubmitBtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SubmitBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.SubmitBtn.Location = new System.Drawing.Point(59, 788);
+            this.SubmitBtn.Location = new System.Drawing.Point(59, 795);
             this.SubmitBtn.Name = "SubmitBtn";
             this.SubmitBtn.Size = new System.Drawing.Size(552, 52);
             this.SubmitBtn.TabIndex = 2;
@@ -332,6 +311,28 @@
             this.cutomerBanner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.cutomerBanner.TabIndex = 0;
             this.cutomerBanner.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel2.Controls.Add(this.RatingLbl);
+            this.panel2.Controls.Add(this.RatingLayout);
+            this.panel2.Location = new System.Drawing.Point(3, 226);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(544, 190);
+            this.panel2.TabIndex = 3;
+            // 
+            // RatingLbl
+            // 
+            this.RatingLbl.AutoSize = true;
+            this.RatingLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RatingLbl.ForeColor = System.Drawing.Color.DimGray;
+            this.RatingLbl.Location = new System.Drawing.Point(4, 3);
+            this.RatingLbl.Name = "RatingLbl";
+            this.RatingLbl.Size = new System.Drawing.Size(75, 24);
+            this.RatingLbl.TabIndex = 10;
+            this.RatingLbl.Text = "Rating ";
+            this.RatingLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Customer
             // 
@@ -354,12 +355,11 @@
             this.queryHeader.PerformLayout();
             this.PersonalInfoPanel.ResumeLayout(false);
             this.PersonalInfoPanel.PerformLayout();
-            this.RatingLayout.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.SuggesstionLayout.ResumeLayout(false);
             this.SuggesstionLayout.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cutomerBanner)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -388,8 +388,8 @@
         private System.Windows.Forms.FlowLayoutPanel SuggesstionLayout;
         private System.Windows.Forms.Label SuggesstionLbl;
         private System.Windows.Forms.TextBox suggestionBox;
-        private System.Windows.Forms.Label RatingLbl;
         private System.Windows.Forms.Button SubmitBtn;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label RatingLbl;
     }
 }

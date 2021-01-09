@@ -120,7 +120,7 @@ namespace ResortReview
             usernameValue.Text = "";
             userOldPass.Text = "";
             userNewPass.Text = "";
+            ErrorMsgTitle.Text = "";
         }
-
     }
 }

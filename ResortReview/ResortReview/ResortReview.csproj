@@ -81,6 +81,12 @@
     <Compile Include="Help.Designer.cs">
       <DependentUpon>Help.cs</DependentUpon>
     </Compile>
+    <Compile Include="InsertedCriteria.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InsertedCriteria.Designer.cs">
+      <DependentUpon>InsertedCriteria.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginAuthentication.cs" />
     <Compile Include="PassControl.cs">
       <SubType>UserControl</SubType>
@@ -117,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Help.resx">
       <DependentUpon>Help.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InsertedCriteria.resx">
+      <DependentUpon>InsertedCriteria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PassControl.resx">
       <DependentUpon>PassControl.cs</DependentUpon>
@@ -186,6 +195,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\admin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white-star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star-filled-20.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

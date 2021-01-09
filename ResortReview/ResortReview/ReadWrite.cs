@@ -10,7 +10,7 @@ namespace ResortReview
     class ReadWrite
     {
         // for writing file
-        public static void WriteToText(string path, string data, bool append = true) {
+        public static void WriteToText(string path, string data, bool append = true, int format = 0) {
             if (!File.Exists(path))
             {
                 var file = File.Create(path);
@@ -22,7 +22,14 @@ namespace ResortReview
                 {
                     data = data + ",";
                 }
-                writer.WriteLine(data);
+                if (format != 0)
+                {
+                    writer.Write(data);
+                }
+                else {
+                    writer.WriteLine(data);
+                }
+                
             }
         }
 

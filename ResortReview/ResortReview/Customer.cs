@@ -14,10 +14,14 @@ namespace ResortReview
     public partial class Customer : Form
     {
         private int mov,movX,movY;
+        private List<string> criteriaTitle = new List<string>();
+        //list of InsertedCriteria object => Object of review tile seen in the review section of customer rating.
+        private List<InsertedCriteria> AllControls = new List<InsertedCriteria>();
         Thread t;
         public Customer()
         {
             InitializeComponent();
+            SetCriteria();
         }
 
         // for adding shadow effect on window
@@ -32,15 +36,47 @@ namespace ResortReview
             }
         }
         //
+        //setting criteria
+        //
+        private void SetCriteria() {
+            string data = ReadWrite.ReadFromText(path:"CriteriaCollection.txt");
+            
+            if (data != "") {
+                data = data.Trim().Substring(1, data.Trim().Length - 3); 
+                if (!data.Contains(","))
+                {
+                    criteriaTitle.Add(data);
+                }
+                else {
+                    criteriaTitle = data.Split(',').ToList();
+                }
+            }
+
+            PrepareCriteriaBlock(); // this method creates multiple tiles for set criteria.
+        }
+
+        //method for adding rating dynamically in customer UI
+        private void PrepareCriteriaBlock() {
+            if (criteriaTitle.Count() != 0) {
+
+                foreach (string title in criteriaTitle) {
+                    AllControls.Add(new InsertedCriteria(title));
+                }
+            }
+            //Console.WriteLine(criteriaTitle.Count());
+            foreach (InsertedCriteria criteria in AllControls) {
+                RatingLayout.Controls.Add(criteria);
+            }
+        }
+        //
         // Close button
         //
         private void CloseLbl_Click(object sender, EventArgs e)
         {
             int value = (int)MessageBox.Show("Do you want to exit!", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+            if (value == 6){
 
-            if (value == 6)
-            {
                 this.Dispose();
                 t = new Thread(NextPage);
                 t.SetApartmentState(ApartmentState.STA);
@@ -107,6 +143,7 @@ namespace ResortReview
               this.SetDesktopLocation(MousePosition.X - movX, MousePosition.Y - movY);
             }
         }
+
         //
         //
         //
@@ -123,6 +160,10 @@ namespace ResortReview
             customerEmailBox.Text = "";
             customerNumberBox.Text = "";
             suggestionBox.Text = "";
+
+            foreach (InsertedCriteria criteria in AllControls) {
+                criteria.Unselect();
+            }
         }
     }
 }
