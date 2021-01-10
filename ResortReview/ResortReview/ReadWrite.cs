@@ -32,8 +32,9 @@ namespace ResortReview
                 
             }
         }
-
+        //
         // for reading file
+        //
         public static string ReadFromText(string path) {
             // for checking valid path of the file.
             if (File.Exists(path)) {

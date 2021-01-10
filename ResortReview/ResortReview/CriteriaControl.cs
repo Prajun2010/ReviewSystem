@@ -22,8 +22,72 @@ namespace ResortReview
         //
         private void CriteriaBtn_Click(object sender, EventArgs e)
         {
+            // storing criteria title for cheking redudancy
+            List<string> CriteriaCollection;   
+
+            //Reading previous criteria title before adding new criteria to the file.
+            //Helps to determine whether the specified criteria is already contained or not.
+            if (criteriaSpecifyBox.Text != "")
+            {
+                string CriteriaTitles = ReadWrite.ReadFromText(path: path);
+                
+                if (CriteriaTitles != "")
+                {
+                    CriteriaTitles = CriteriaTitles.Trim().Substring(1, CriteriaTitles.Trim().Length - 3);
+                    //this condition is read if the file contains only single criteria title.
+                    if (!CriteriaTitles.Contains(","))
+                    {
+                        if (criteriaSpecifyBox.Text == CriteriaTitles || 
+                            criteriaSpecifyBox.Text.ToUpper() == CriteriaTitles.ToUpper() ||
+                            criteriaSpecifyBox.Text.ToLower() == CriteriaTitles.ToLower()
+                            ) // if redudancy found.
+                        {
+                            MessageBox.Show("Criteria already set!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else  
+                        {
+                            AddCriteria();
+                        }
+                    }
+                    // this condition is read if the file contains more than one criteria title. 
+                    else
+                    {
+                        //flag:true -> contains redudant title
+                        //flag:false -> doesn't contain redudant title
+                        bool flag = false; 
+                        CriteriaCollection = CriteriaTitles.Split(',').ToList();
+
+                        foreach (string similarCriteria in CriteriaCollection)
+                        {
+                            if (similarCriteria == criteriaSpecifyBox.Text)
+                            {
+                                //set flag to true if redudant title found.
+                                flag = true;
+                                break;
+                            }
+                        }
+                        if (flag != true)
+                        {
+                            AddCriteria();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Criteria already set!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Empty criteria can not be set!", "Criteria", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        // method for adding or appending specified critiera in the specified file.
+        private void AddCriteria() {
             //here format (1)=> append in same line(i.e Console.Write(data))
-            ReadWrite.WriteToText(data: criteriaSpecifyBox.Text, path: path, append:true,format:1);
+            ReadWrite.WriteToText(data: criteriaSpecifyBox.Text, path: path, append: true, format: 1);
+            MessageBox.Show("Criteria Set successfully!", "Criteria", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            criteriaSpecifyBox.Text = "";
         }
     }
 }

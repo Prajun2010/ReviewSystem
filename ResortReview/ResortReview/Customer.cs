@@ -17,6 +17,9 @@ namespace ResortReview
         private List<string> criteriaTitle = new List<string>();
         //list of InsertedCriteria object => Object of review tile seen in the review section of customer rating.
         private List<InsertedCriteria> AllControls = new List<InsertedCriteria>();
+
+        private Dictionary<string, string> Criteria_Value = new Dictionary<string, string>();
+
         Thread t;
         public Customer()
         {
@@ -152,17 +155,39 @@ namespace ResortReview
             MinimizeLbl.ForeColor = Color.Orange;
         }
         //
+        //
+        //
+        private void KeyValue() {
+            for (int i = 0; i < criteriaTitle.Count() - 1;i++) {
+                Criteria_Value[criteriaTitle[i]] = AllControls[i].Review.ToString();
+            }
+        }
+        //
         // for submitting customer review
         //
         private void SubmitBtn_Click(object sender, EventArgs e)
         {
-            customerNameBox.Text = "";
-            customerEmailBox.Text = "";
-            customerNumberBox.Text = "";
-            suggestionBox.Text = "";
+            KeyValue();
+            CustomerReview cr = new CustomerReview();
+            cr.CustomerName = customerNameBox.Text;
+            cr.CustomerEmail = customerEmailBox.Text;
+            cr.CustomerNumber = customerEmailBox.Text;
+            cr.Suggesstions = suggestionBox.Text;
+            cr.AllRatings = Criteria_Value;
+            string response = cr.SaveReview(cr);
+            if (response == "Success") {
+                customerNameBox.Text = "";
+                customerEmailBox.Text = "";
+                customerNumberBox.Text = "";
+                suggestionBox.Text = "";
 
-            foreach (InsertedCriteria criteria in AllControls) {
-                criteria.Unselect();
+                foreach (InsertedCriteria criteria in AllControls)
+                {
+                    criteria.Unselect();
+                }
+
+                MessageBox.Show("Thank you for the review!", "Review", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
         }
     }

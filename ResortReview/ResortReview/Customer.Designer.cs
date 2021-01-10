@@ -44,6 +44,8 @@
             this.customerNameBox = new System.Windows.Forms.TextBox();
             this.CustomerName = new System.Windows.Forms.Label();
             this.PersonalInfo = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.RatingLbl = new System.Windows.Forms.Label();
             this.RatingLayout = new System.Windows.Forms.FlowLayoutPanel();
             this.SuggesstionLayout = new System.Windows.Forms.FlowLayoutPanel();
             this.SuggesstionLbl = new System.Windows.Forms.Label();
@@ -52,15 +54,13 @@
             this.miniTip = new System.Windows.Forms.ToolTip(this.components);
             this.SubmitBtn = new System.Windows.Forms.Button();
             this.cutomerBanner = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.RatingLbl = new System.Windows.Forms.Label();
             this.customerControlBox.SuspendLayout();
             this.queryLayout.SuspendLayout();
             this.queryHeader.SuspendLayout();
             this.PersonalInfoPanel.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuggesstionLayout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cutomerBanner)).BeginInit();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // customerControlBox
@@ -245,6 +245,28 @@
             this.PersonalInfo.Text = "Personal Information";
             this.PersonalInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel2.Controls.Add(this.RatingLbl);
+            this.panel2.Controls.Add(this.RatingLayout);
+            this.panel2.Location = new System.Drawing.Point(3, 226);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(544, 190);
+            this.panel2.TabIndex = 3;
+            // 
+            // RatingLbl
+            // 
+            this.RatingLbl.AutoSize = true;
+            this.RatingLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RatingLbl.ForeColor = System.Drawing.Color.DimGray;
+            this.RatingLbl.Location = new System.Drawing.Point(4, 3);
+            this.RatingLbl.Name = "RatingLbl";
+            this.RatingLbl.Size = new System.Drawing.Size(75, 24);
+            this.RatingLbl.TabIndex = 10;
+            this.RatingLbl.Text = "Rating ";
+            this.RatingLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // RatingLayout
             // 
             this.RatingLayout.AutoScroll = true;
@@ -312,28 +334,6 @@
             this.cutomerBanner.TabIndex = 0;
             this.cutomerBanner.TabStop = false;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel2.Controls.Add(this.RatingLbl);
-            this.panel2.Controls.Add(this.RatingLayout);
-            this.panel2.Location = new System.Drawing.Point(3, 226);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(544, 190);
-            this.panel2.TabIndex = 3;
-            // 
-            // RatingLbl
-            // 
-            this.RatingLbl.AutoSize = true;
-            this.RatingLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RatingLbl.ForeColor = System.Drawing.Color.DimGray;
-            this.RatingLbl.Location = new System.Drawing.Point(4, 3);
-            this.RatingLbl.Name = "RatingLbl";
-            this.RatingLbl.Size = new System.Drawing.Size(75, 24);
-            this.RatingLbl.TabIndex = 10;
-            this.RatingLbl.Text = "Rating ";
-            this.RatingLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -355,11 +355,11 @@
             this.queryHeader.PerformLayout();
             this.PersonalInfoPanel.ResumeLayout(false);
             this.PersonalInfoPanel.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.SuggesstionLayout.ResumeLayout(false);
             this.SuggesstionLayout.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cutomerBanner)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }

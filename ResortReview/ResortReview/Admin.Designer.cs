@@ -33,26 +33,26 @@
             this.CloseLbl = new System.Windows.Forms.Label();
             this.AdminTitleBar = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.TitleLogo = new System.Windows.Forms.PictureBox();
             this.AdminControlBtn = new System.Windows.Forms.Panel();
             this.ButtonMarker = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.ClostTip = new System.Windows.Forms.ToolTip(this.components);
+            this.MinimizeTip = new System.Windows.Forms.ToolTip(this.components);
+            this.GeneralTitle = new System.Windows.Forms.Label();
+            this.AdminBoardTitle = new System.Windows.Forms.Label();
+            this.AdminLogo = new System.Windows.Forms.PictureBox();
+            this.TitleLogo = new System.Windows.Forms.PictureBox();
             this.CriteriaBtn = new System.Windows.Forms.Button();
             this.PasswordChangeBtn = new System.Windows.Forms.Button();
             this.LogoutBtn = new System.Windows.Forms.Button();
             this.DashboardBtn = new System.Windows.Forms.Button();
-            this.ClostTip = new System.Windows.Forms.ToolTip(this.components);
-            this.MinimizeTip = new System.Windows.Forms.ToolTip(this.components);
-            this.GeneralTitle = new System.Windows.Forms.Label();
-            this.AdminLogo = new System.Windows.Forms.PictureBox();
-            this.AdminBoardTitle = new System.Windows.Forms.Label();
-            this.dashboardControl1 = new ResortReview.DashboardControl();
-            this.criteriaControl1 = new ResortReview.CriteriaControl();
             this.passControl1 = new ResortReview.PassControl();
+            this.criteriaControl1 = new ResortReview.CriteriaControl();
+            this.dashboardControl1 = new ResortReview.DashboardControl();
             this.AdminTitleBar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TitleLogo)).BeginInit();
             this.AdminControlBtn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AdminLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TitleLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // MinimizeLbl
@@ -108,17 +108,6 @@
             this.label1.TabIndex = 13;
             this.label1.Text = "Parinita Resort";
             // 
-            // TitleLogo
-            // 
-            this.TitleLogo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.TitleLogo.Image = global::ResortReview.Properties.Resources.mini_logo;
-            this.TitleLogo.Location = new System.Drawing.Point(0, 0);
-            this.TitleLogo.Name = "TitleLogo";
-            this.TitleLogo.Size = new System.Drawing.Size(92, 78);
-            this.TitleLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.TitleLogo.TabIndex = 12;
-            this.TitleLogo.TabStop = false;
-            // 
             // AdminControlBtn
             // 
             this.AdminControlBtn.BackColor = System.Drawing.Color.Green;
@@ -152,6 +141,51 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Parinita Resort (Pvt) Ltd.\r\nDeveloper | Prajun Lungeli";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // GeneralTitle
+            // 
+            this.GeneralTitle.AutoSize = true;
+            this.GeneralTitle.Font = new System.Drawing.Font("Microsoft YaHei UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GeneralTitle.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.GeneralTitle.Location = new System.Drawing.Point(238, 91);
+            this.GeneralTitle.Name = "GeneralTitle";
+            this.GeneralTitle.Size = new System.Drawing.Size(298, 43);
+            this.GeneralTitle.TabIndex = 14;
+            this.GeneralTitle.Text = "Change Password";
+            this.GeneralTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // AdminBoardTitle
+            // 
+            this.AdminBoardTitle.AutoSize = true;
+            this.AdminBoardTitle.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AdminBoardTitle.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.AdminBoardTitle.Location = new System.Drawing.Point(1189, 101);
+            this.AdminBoardTitle.Name = "AdminBoardTitle";
+            this.AdminBoardTitle.Size = new System.Drawing.Size(117, 23);
+            this.AdminBoardTitle.TabIndex = 17;
+            this.AdminBoardTitle.Text = "Admin Board";
+            this.AdminBoardTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // AdminLogo
+            // 
+            this.AdminLogo.Image = global::ResortReview.Properties.Resources.admin;
+            this.AdminLogo.Location = new System.Drawing.Point(1312, 94);
+            this.AdminLogo.Name = "AdminLogo";
+            this.AdminLogo.Size = new System.Drawing.Size(30, 30);
+            this.AdminLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.AdminLogo.TabIndex = 16;
+            this.AdminLogo.TabStop = false;
+            // 
+            // TitleLogo
+            // 
+            this.TitleLogo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.TitleLogo.Image = global::ResortReview.Properties.Resources.mini_logo;
+            this.TitleLogo.Location = new System.Drawing.Point(0, 0);
+            this.TitleLogo.Name = "TitleLogo";
+            this.TitleLogo.Size = new System.Drawing.Size(92, 78);
+            this.TitleLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.TitleLogo.TabIndex = 12;
+            this.TitleLogo.TabStop = false;
             // 
             // CriteriaBtn
             // 
@@ -230,47 +264,13 @@
             this.DashboardBtn.UseVisualStyleBackColor = false;
             this.DashboardBtn.Click += new System.EventHandler(this.DashboardBtn_Click);
             // 
-            // GeneralTitle
+            // passControl1
             // 
-            this.GeneralTitle.AutoSize = true;
-            this.GeneralTitle.Font = new System.Drawing.Font("Microsoft YaHei UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GeneralTitle.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.GeneralTitle.Location = new System.Drawing.Point(238, 91);
-            this.GeneralTitle.Name = "GeneralTitle";
-            this.GeneralTitle.Size = new System.Drawing.Size(298, 43);
-            this.GeneralTitle.TabIndex = 14;
-            this.GeneralTitle.Text = "Change Password";
-            this.GeneralTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // AdminLogo
-            // 
-            this.AdminLogo.Image = global::ResortReview.Properties.Resources.admin;
-            this.AdminLogo.Location = new System.Drawing.Point(1312, 94);
-            this.AdminLogo.Name = "AdminLogo";
-            this.AdminLogo.Size = new System.Drawing.Size(30, 30);
-            this.AdminLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.AdminLogo.TabIndex = 16;
-            this.AdminLogo.TabStop = false;
-            // 
-            // AdminBoardTitle
-            // 
-            this.AdminBoardTitle.AutoSize = true;
-            this.AdminBoardTitle.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AdminBoardTitle.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.AdminBoardTitle.Location = new System.Drawing.Point(1189, 101);
-            this.AdminBoardTitle.Name = "AdminBoardTitle";
-            this.AdminBoardTitle.Size = new System.Drawing.Size(117, 23);
-            this.AdminBoardTitle.TabIndex = 17;
-            this.AdminBoardTitle.Text = "Admin Board";
-            this.AdminBoardTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // dashboardControl1
-            // 
-            this.dashboardControl1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dashboardControl1.Location = new System.Drawing.Point(230, 155);
-            this.dashboardControl1.Name = "dashboardControl1";
-            this.dashboardControl1.Size = new System.Drawing.Size(1129, 578);
-            this.dashboardControl1.TabIndex = 18;
+            this.passControl1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.passControl1.Location = new System.Drawing.Point(230, 154);
+            this.passControl1.Name = "passControl1";
+            this.passControl1.Size = new System.Drawing.Size(1129, 574);
+            this.passControl1.TabIndex = 20;
             // 
             // criteriaControl1
             // 
@@ -280,13 +280,13 @@
             this.criteriaControl1.Size = new System.Drawing.Size(1129, 594);
             this.criteriaControl1.TabIndex = 19;
             // 
-            // passControl1
+            // dashboardControl1
             // 
-            this.passControl1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.passControl1.Location = new System.Drawing.Point(230, 154);
-            this.passControl1.Name = "passControl1";
-            this.passControl1.Size = new System.Drawing.Size(1129, 574);
-            this.passControl1.TabIndex = 20;
+            this.dashboardControl1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dashboardControl1.Location = new System.Drawing.Point(230, 155);
+            this.dashboardControl1.Name = "dashboardControl1";
+            this.dashboardControl1.Size = new System.Drawing.Size(1129, 578);
+            this.dashboardControl1.TabIndex = 18;
             // 
             // Admin
             // 
@@ -309,10 +309,10 @@
             this.Text = "Admin";
             this.AdminTitleBar.ResumeLayout(false);
             this.AdminTitleBar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TitleLogo)).EndInit();
             this.AdminControlBtn.ResumeLayout(false);
             this.AdminControlBtn.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AdminLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TitleLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
