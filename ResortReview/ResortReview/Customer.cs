@@ -16,7 +16,7 @@ namespace ResortReview
         private int mov,movX,movY;
         private List<string> criteriaTitle = new List<string>();
         //list of InsertedCriteria object => Object of review tile seen in the review section of customer rating.
-        private List<InsertedCriteria> AllControls = new List<InsertedCriteria>();
+        private List<CriteriaTiles> AllControls = new List<CriteriaTiles>();
 
         private Dictionary<string, string> Criteria_Value = new Dictionary<string, string>();
 
@@ -55,19 +55,19 @@ namespace ResortReview
                 }
             }
 
-            PrepareCriteriaBlock(); // this method creates multiple tiles for set criteria.
+            setCriteriaBlock(); // this method creates multiple tiles for set criteria.
         }
 
         //method for adding rating dynamically in customer UI
-        private void PrepareCriteriaBlock() {
+        private void setCriteriaBlock() {
             if (criteriaTitle.Count() != 0) {
 
                 foreach (string title in criteriaTitle) {
-                    AllControls.Add(new InsertedCriteria(title));
+                    AllControls.Add(new CriteriaTiles(title));
                 }
             }
             //Console.WriteLine(criteriaTitle.Count());
-            foreach (InsertedCriteria criteria in AllControls) {
+            foreach (CriteriaTiles criteria in AllControls) {
                 RatingLayout.Controls.Add(criteria);
             }
         }
@@ -171,9 +171,11 @@ namespace ResortReview
             CustomerReview cr = new CustomerReview();
             cr.CustomerName = customerNameBox.Text;
             cr.CustomerEmail = customerEmailBox.Text;
-            cr.CustomerNumber = customerEmailBox.Text;
+            cr.CustomerNumber = customerNumberBox.Text;
             cr.Suggesstions = suggestionBox.Text;
             cr.AllRatings = Criteria_Value;
+            cr.ReviewDate = DateTime.Now.ToString("dd/MM/yyyy");
+            cr.RevieTime = DateTime.Now.ToString("h:mm tt");
             string response = cr.SaveReview(cr);
             if (response == "Success") {
                 customerNameBox.Text = "";
@@ -181,7 +183,7 @@ namespace ResortReview
                 customerNumberBox.Text = "";
                 suggestionBox.Text = "";
 
-                foreach (InsertedCriteria criteria in AllControls)
+                foreach (CriteriaTiles criteria in AllControls)
                 {
                     criteria.Unselect();
                 }

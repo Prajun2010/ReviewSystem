@@ -1,6 +1,6 @@
 ﻿namespace ResortReview
 {
-    partial class InsertedCriteria
+    partial class CriteriaTiles
     {
         /// <summary> 
         /// Required designer variable.

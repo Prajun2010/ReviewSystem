@@ -9,9 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ResortReview.Properties;
 
+/*
+ * 
+ */
 namespace ResortReview
 {
-    public partial class InsertedCriteria : UserControl
+    public partial class CriteriaTiles : UserControl
     {
         public int Review { get; set; }
         private bool RateOneClicked = false;
@@ -19,7 +22,7 @@ namespace ResortReview
         private bool RateThreeClicked = false;
         private bool RateFourClicked = false;
         private bool RateFiveClicked = false;
-        public InsertedCriteria(string criteriaName)
+        public CriteriaTiles(string criteriaName)
         {
             InitializeComponent();
             RateOne.Image = Resources.white_star;
