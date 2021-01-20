@@ -141,7 +141,7 @@ namespace ResortReview
                 Application.Run(new Admin()); // it will run the new form.
             }
             else{
-                Application.Run(new Customer());
+                Application.Run(new ReviewForm());
             }
             
         }

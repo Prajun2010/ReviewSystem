@@ -63,19 +63,19 @@
     <Compile Include="CriteriaControl.Designer.cs">
       <DependentUpon>CriteriaControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Customer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Customer.Designer.cs">
-      <DependentUpon>Customer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CustomerReview.cs" />
-    <Compile Include="DashboardControl.cs">
+    <Compile Include="Dashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="DashboardControl.Designer.cs">
-      <DependentUpon>DashboardControl.cs</DependentUpon>
+    <Compile Include="Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReviewForm.Designer.cs">
+      <DependentUpon>ReviewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerReview.cs" />
     <Compile Include="Help.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,11 +116,11 @@
     <EmbeddedResource Include="CriteriaControl.resx">
       <DependentUpon>CriteriaControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Customer.resx">
-      <DependentUpon>Customer.cs</DependentUpon>
+    <EmbeddedResource Include="Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DashboardControl.resx">
-      <DependentUpon>DashboardControl.cs</DependentUpon>
+    <EmbeddedResource Include="ReviewForm.resx">
+      <DependentUpon>ReviewForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Help.resx">
       <DependentUpon>Help.cs</DependentUpon>

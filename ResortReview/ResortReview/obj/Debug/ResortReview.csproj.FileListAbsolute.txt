@@ -13,9 +13,9 @@ D:\islington\3rd year\Application Development\Coursework\Coursework1\ResortRevie
 D:\islington\3rd year\Application Development\Coursework\Coursework1\ResortReview\ResortReview\bin\Debug\Newtonsoft.Json.xml
 D:\islington\3rd year\Application Development\Coursework\Coursework1\ResortReview\ResortReview\obj\Debug\ResortReview.csproj.CopyComplete
 D:\islington\3rd year\Application Development\Coursework\Coursework1\ResortReview\ResortReview\obj\Debug\ResortReview.Admin.resources
-D:\islington\3rd year\Application Development\Coursework\Coursework1\ResortReview\ResortReview\obj\Debug\ResortReview.Customer.resources
 D:\islington\3rd year\Application Development\Coursework\Coursework1\ResortReview\ResortReview\obj\Debug\ResortReview.PassControl.resources
-D:\islington\3rd year\Application Development\Coursework\Coursework1\ResortReview\ResortReview\obj\Debug\ResortReview.DashboardControl.resources
 D:\islington\3rd year\Application Development\Coursework\Coursework1\ResortReview\ResortReview\obj\Debug\ResortReview.CriteriaControl.resources
-D:\islington\3rd year\Application Development\Coursework\Coursework1\ResortReview\ResortReview\obj\Debug\ResortReview.csprojAssemblyReference.cache
 D:\islington\3rd year\Application Development\Coursework\Coursework1\ResortReview\ResortReview\obj\Debug\ResortReview.CriteriaTiles.resources
+D:\islington\3rd year\Application Development\Coursework\Coursework1\ResortReview\ResortReview\obj\Debug\ResortReview.ReviewForm.resources
+D:\islington\3rd year\Application Development\Coursework\Coursework1\ResortReview\ResortReview\obj\Debug\ResortReview.Dashboard.resources
+D:\islington\3rd year\Application Development\Coursework\Coursework1\ResortReview\ResortReview\obj\Debug\ResortReview.csprojAssemblyReference.cache

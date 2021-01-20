@@ -1,6 +1,6 @@
 ﻿namespace ResortReview
 {
-    partial class Customer
+    partial class ReviewForm
     {
         /// <summary>
         /// Required designer variable.

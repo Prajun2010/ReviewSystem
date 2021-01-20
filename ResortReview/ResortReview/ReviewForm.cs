@@ -11,17 +11,17 @@ using System.Threading;
 
 namespace ResortReview
 {
-    public partial class Customer : Form
+    public partial class ReviewForm : Form
     {
         private int mov,movX,movY;
         private List<string> criteriaTitle = new List<string>();
         //list of InsertedCriteria object => Object of review tile seen in the review section of customer rating.
-        private List<CriteriaTiles> AllControls = new List<CriteriaTiles>();
+        private List<CriteriaTiles> AllCriteria = new List<CriteriaTiles>();
 
-        private Dictionary<string, string> Criteria_Value = new Dictionary<string, string>();
+        private Dictionary<string, int> Criteria_Value = new Dictionary<string, int>();
 
         Thread t;
-        public Customer()
+        public ReviewForm()
         {
             InitializeComponent();
             SetCriteria();
@@ -63,11 +63,11 @@ namespace ResortReview
             if (criteriaTitle.Count() != 0) {
 
                 foreach (string title in criteriaTitle) {
-                    AllControls.Add(new CriteriaTiles(title));
+                    AllCriteria.Add(new CriteriaTiles(title));
                 }
             }
             //Console.WriteLine(criteriaTitle.Count());
-            foreach (CriteriaTiles criteria in AllControls) {
+            foreach (CriteriaTiles criteria in AllCriteria) {
                 RatingLayout.Controls.Add(criteria);
             }
         }
@@ -155,11 +155,11 @@ namespace ResortReview
             MinimizeLbl.ForeColor = Color.Orange;
         }
         //
-        //
+        //This method is created to store criteria title as key and it's rating as value in dictionary 
         //
         private void KeyValue() {
-            for (int i = 0; i < criteriaTitle.Count() - 1;i++) {
-                Criteria_Value[criteriaTitle[i]] = AllControls[i].Review.ToString();
+            for (int i = 0; i < criteriaTitle.Count();i++) {
+                Criteria_Value[criteriaTitle[i]] = AllCriteria[i].Review;
             }
         }
         //
@@ -174,8 +174,8 @@ namespace ResortReview
             cr.CustomerNumber = customerNumberBox.Text;
             cr.Suggesstions = suggestionBox.Text;
             cr.AllRatings = Criteria_Value;
-            cr.ReviewDate = DateTime.Now.ToString("dd/MM/yyyy");
-            cr.RevieTime = DateTime.Now.ToString("h:mm tt");
+            cr.RatingDate = DateTime.Now.ToString("yyyy/MM/d");
+            cr.RatingTime = DateTime.Now.ToString("hh:m tt");
             string response = cr.SaveReview(cr);
             if (response == "Success") {
                 customerNameBox.Text = "";
@@ -183,7 +183,7 @@ namespace ResortReview
                 customerNumberBox.Text = "";
                 suggestionBox.Text = "";
 
-                foreach (CriteriaTiles criteria in AllControls)
+                foreach (CriteriaTiles criteria in AllCriteria)
                 {
                     criteria.Unselect();
                 }

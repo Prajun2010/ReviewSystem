@@ -1,6 +1,6 @@
 ﻿namespace ResortReview
 {
-    partial class DashboardControl
+    partial class Dashboard
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,44 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.RatingGraph = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.customerReviewData = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RatingGraph)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerReviewData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 279);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1088, 286);
-            this.dataGridView1.TabIndex = 0;
             // 
             // RatingGraph
             // 
             this.RatingGraph.BackColor = System.Drawing.Color.SandyBrown;
-            chartArea1.Name = "ChartArea1";
-            this.RatingGraph.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.RatingGraph.Legends.Add(legend1);
+            chartArea6.Name = "ChartArea1";
+            this.RatingGraph.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.RatingGraph.Legends.Add(legend6);
             this.RatingGraph.Location = new System.Drawing.Point(3, 3);
             this.RatingGraph.Name = "RatingGraph";
             this.RatingGraph.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.RatingGraph.Series.Add(series1);
+            series6.ChartArea = "ChartArea1";
+            series6.Legend = "Legend1";
+            series6.Name = "Customers Rating";
+            this.RatingGraph.Series.Add(series6);
             this.RatingGraph.Size = new System.Drawing.Size(659, 270);
-            this.RatingGraph.TabIndex = 1;
+            this.RatingGraph.TabIndex = 2;
             this.RatingGraph.Text = "RatingChart";
+            // 
+            // customerReviewData
+            // 
+            this.customerReviewData.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.customerReviewData.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.customerReviewData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.customerReviewData.Location = new System.Drawing.Point(3, 279);
+            this.customerReviewData.Name = "customerReviewData";
+            this.customerReviewData.RowHeadersWidth = 51;
+            this.customerReviewData.RowTemplate.Height = 24;
+            this.customerReviewData.Size = new System.Drawing.Size(1112, 219);
+            this.customerReviewData.TabIndex = 3;
             // 
             // pictureBox1
             // 
@@ -74,21 +76,21 @@
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(423, 270);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
-            // DashboardControl
+            // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.customerReviewData);
             this.Controls.Add(this.RatingGraph);
-            this.Controls.Add(this.dataGridView1);
-            this.Name = "DashboardControl";
-            this.Size = new System.Drawing.Size(1094, 568);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Name = "Dashboard";
+            this.Size = new System.Drawing.Size(1020, 568);
             ((System.ComponentModel.ISupportInitialize)(this.RatingGraph)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerReviewData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -96,8 +98,8 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataVisualization.Charting.Chart RatingGraph;
+        private System.Windows.Forms.DataGridView customerReviewData;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

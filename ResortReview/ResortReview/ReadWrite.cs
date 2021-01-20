@@ -46,11 +46,16 @@ namespace ResortReview
                     data = reader.ReadToEnd(); 
                 }
 
-                if (data != "") {
+                if (data != "")
+                {
                     data = "[" + data + "]";
+                    return data;
+                }
+                else {
+                    return "";
                 }
 
-                return data;
+                
             }
 
             return null;

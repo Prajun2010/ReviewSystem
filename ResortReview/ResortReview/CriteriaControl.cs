@@ -30,21 +30,19 @@ namespace ResortReview
             if (criteriaSpecifyBox.Text != "")
             {
                 string CriteriaTitles = ReadWrite.ReadFromText(path: path);
-                
+
                 if (CriteriaTitles != "")
                 {
                     CriteriaTitles = CriteriaTitles.Trim().Substring(1, CriteriaTitles.Trim().Length - 3);
                     //this condition is read if the file contains only single criteria title.
                     if (!CriteriaTitles.Contains(","))
                     {
-                        if (criteriaSpecifyBox.Text == CriteriaTitles || 
-                            criteriaSpecifyBox.Text.ToUpper() == CriteriaTitles.ToUpper() ||
-                            criteriaSpecifyBox.Text.ToLower() == CriteriaTitles.ToLower()
-                            ) // if redudancy found.
+                        if (criteriaSpecifyBox.Text.ToLower() == CriteriaTitles.ToLower())
                         {
+                            // if redudancy found.
                             MessageBox.Show("Criteria already set!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
-                        else  
+                        else
                         {
                             AddCriteria();
                         }
@@ -54,12 +52,12 @@ namespace ResortReview
                     {
                         //flag:true -> contains redudant title
                         //flag:false -> doesn't contain redudant title
-                        bool flag = false; 
+                        bool flag = false;
                         CriteriaCollection = CriteriaTitles.Split(',').ToList();
 
                         foreach (string similarCriteria in CriteriaCollection)
                         {
-                            if (similarCriteria == criteriaSpecifyBox.Text)
+                            if (similarCriteria.ToLower() == criteriaSpecifyBox.Text.ToLower()) // check for redudancy 
                             {
                                 //set flag to true if redudant title found.
                                 flag = true;
@@ -75,6 +73,9 @@ namespace ResortReview
                             MessageBox.Show("Criteria already set!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
+                }
+                else {
+                    AddCriteria();
                 }
             }
             else

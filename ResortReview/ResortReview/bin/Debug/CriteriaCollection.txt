@@ -1,1 +1,1 @@
-Superman,Gamers,HelloWorld,Ansul,Meru,Nepal,Nathuram,Mahila,Sayuj ,Samata,
+Environment Ratings,Nepal,Game Rating,Jam Rating,Danger Rating,

@@ -46,9 +46,9 @@
             this.PasswordChangeBtn = new System.Windows.Forms.Button();
             this.LogoutBtn = new System.Windows.Forms.Button();
             this.DashboardBtn = new System.Windows.Forms.Button();
+            this.dashboard1 = new ResortReview.Dashboard();
             this.passControl1 = new ResortReview.PassControl();
             this.criteriaControl1 = new ResortReview.CriteriaControl();
-            this.dashboardControl1 = new ResortReview.DashboardControl();
             this.AdminTitleBar.SuspendLayout();
             this.AdminControlBtn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AdminLogo)).BeginInit();
@@ -264,13 +264,21 @@
             this.DashboardBtn.UseVisualStyleBackColor = false;
             this.DashboardBtn.Click += new System.EventHandler(this.DashboardBtn_Click);
             // 
+            // dashboard1
+            // 
+            this.dashboard1.Location = new System.Drawing.Point(230, 158);
+            this.dashboard1.Name = "dashboard1";
+            this.dashboard1.Size = new System.Drawing.Size(1129, 567);
+            this.dashboard1.TabIndex = 21;
+            // 
             // passControl1
             // 
             this.passControl1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.passControl1.Location = new System.Drawing.Point(230, 154);
+            this.passControl1.Location = new System.Drawing.Point(230, 155);
             this.passControl1.Name = "passControl1";
             this.passControl1.Size = new System.Drawing.Size(1129, 574);
             this.passControl1.TabIndex = 20;
+            this.passControl1.Load += new System.EventHandler(this.passControl1_Load);
             // 
             // criteriaControl1
             // 
@@ -280,14 +288,6 @@
             this.criteriaControl1.Size = new System.Drawing.Size(1129, 594);
             this.criteriaControl1.TabIndex = 19;
             // 
-            // dashboardControl1
-            // 
-            this.dashboardControl1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dashboardControl1.Location = new System.Drawing.Point(230, 155);
-            this.dashboardControl1.Name = "dashboardControl1";
-            this.dashboardControl1.Size = new System.Drawing.Size(1129, 578);
-            this.dashboardControl1.TabIndex = 18;
-            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -295,6 +295,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1359, 726);
+            this.Controls.Add(this.dashboard1);
             this.Controls.Add(this.passControl1);
             this.Controls.Add(this.criteriaControl1);
             this.Controls.Add(this.AdminBoardTitle);
@@ -302,7 +303,6 @@
             this.Controls.Add(this.GeneralTitle);
             this.Controls.Add(this.AdminTitleBar);
             this.Controls.Add(this.AdminControlBtn);
-            this.Controls.Add(this.dashboardControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Admin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -337,8 +337,8 @@
         private System.Windows.Forms.Label GeneralTitle;
         private System.Windows.Forms.PictureBox AdminLogo;
         private System.Windows.Forms.Label AdminBoardTitle;
-        private DashboardControl dashboardControl1;
         private CriteriaControl criteriaControl1;
         private PassControl passControl1;
+        private Dashboard dashboard1;
     }
 }

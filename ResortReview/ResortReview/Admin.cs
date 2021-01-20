@@ -19,7 +19,7 @@ namespace ResortReview
         {
             InitializeComponent();
             GeneralTitle.Text = "Dashboard";
-            dashboardControl1.BringToFront();
+            dashboard1.BringToFront();
         }
         //
         // for adding shadow effect on window
@@ -38,7 +38,7 @@ namespace ResortReview
         {
             ButtonMarker.Height = DashboardBtn.Height;
             ButtonMarker.Top = DashboardBtn.Top;
-            dashboardControl1.BringToFront();
+            dashboard1.BringToFront();
             GeneralTitle.Text = "Dashboard";
             passControl1.Clear();
 
@@ -98,6 +98,11 @@ namespace ResortReview
             criteriaControl1.BringToFront();
             GeneralTitle.Text = "Form Criteria";
             passControl1.Clear();
+
+        }
+
+        private void passControl1_Load(object sender, EventArgs e)
+        {
 
         }
 

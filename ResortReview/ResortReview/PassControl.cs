@@ -20,11 +20,11 @@ namespace ResortReview
 
         private void PassChangeBtn_Click(object sender, EventArgs e)
         {
-            int response = ReadCredential(usernameValue.Text,userOldPass.Text,path);
-            ResponseValidation(response);
+            int response = ReadCredential(usernameValue.Text,userOldPass.Text,path); // for verifying
+            ResponseValidation(response); // act according to verification 
         }
         //
-        //
+        //this method is used for verification
         //
         private int ReadCredential(string username, string password, string path) {
             int check = LoginAuthentication.AuthenticateCredential(username:username,password:password,path:path);
@@ -33,7 +33,9 @@ namespace ResortReview
             }
             return -1;
         }
-
+        //
+        //this method helps system to act differently according to the response.
+        //
         private void ResponseValidation(int response) {
             if (response == 0)
             {
