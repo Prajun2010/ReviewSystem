@@ -12,6 +12,8 @@ namespace ResortReview
 {
     public partial class Dashboard : UserControl
     {
+        bool sortStatus = false;
+        bool resetStatus = false;
         public Dashboard()
         {
             InitializeComponent();
@@ -112,9 +114,10 @@ namespace ResortReview
                 }
             }
             return ChartData;
-            
-;        }
-
+        }
+        //
+        // CriteriaList method is used for listing out all the specified criteria and storing to criteriaCollection list.
+        //
         public static List<string> CriteriaList()   
         {
             List<string> CriteriaCollection = new List<string>();
@@ -135,21 +138,43 @@ namespace ResortReview
 
             return CriteriaCollection;
         }
-
+        //
+        // method for sorting review list
+        //
         private void SortBtn_Click(object sender, EventArgs e)
         {
-            CustomerReview cr = new CustomerReview();
-            List<CustomerReview> review = cr.ReviewList();
-            DataTable sortedTable = ConvertToDataTable(cr.SortData(review));
-            customerReviewData.DataSource = sortedTable;
+            if (sortStatus == false)
+            {
+                sortStatus = true;
+                resetStatus = false;
+                CustomerReview cr = new CustomerReview();
+                List<CustomerReview> review = cr.ReviewList();
+                DataTable sortedTable = ConvertToDataTable(cr.SortData(review));
+                customerReviewData.DataSource = sortedTable;
+            }
+            else {
+                MessageBox.Show("Review List has been already sorted!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            
         }
-
+        //
+        // method for reseting review list
+        //
         private void resetBtn_Click(object sender, EventArgs e)
         {
-            CustomerReview cr = new CustomerReview();
-            List<CustomerReview> review = cr.ReviewList();
-            DataTable resetTable = ConvertToDataTable(review);
-            customerReviewData.DataSource = resetTable;
+            if (resetStatus == false) {
+                sortStatus = false;
+                resetStatus = true;
+                CustomerReview cr = new CustomerReview();
+                List<CustomerReview> review = cr.ReviewList();
+                DataTable resetTable = ConvertToDataTable(review);
+                customerReviewData.DataSource = resetTable;
+            }
+            else
+            {
+                MessageBox.Show("Review List has been already reset!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            
         }
     }
 }

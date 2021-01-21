@@ -1,1 +1,1 @@
-Environment Ratings,Nepal,Game Rating,Jam Rating,Danger Rating,Prajun,Hello,Ansul,
+Environment Rating,Food Rating,Service Rating,Suite Rating,

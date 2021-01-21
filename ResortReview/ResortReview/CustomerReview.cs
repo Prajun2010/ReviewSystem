@@ -37,19 +37,23 @@ namespace ResortReview
 
         public List<CustomerReview> SortData(List<CustomerReview> data) {
             CustomerReview temp;
-            for (int j = 0; j <= data.Count - 2; j++)
-            {
-                for (int i = 0; i <= data.Count - 2; i++)
+            if (data != null) {
+                for (int j = 0; j <= data.Count - 2; j++)
                 {
-                    if (data[i].RatingDate > data[i + 1].RatingDate)
+                    for (int i = 0; i <= data.Count - 2; i++)
                     {
-                        temp = data[i + 1];
-                        data[i + 1] = data[i];
-                        data[i] = temp;
+                        if (data[i].RatingDate > data[i + 1].RatingDate)
+                        {
+                            temp = data[i + 1];
+                            data[i + 1] = data[i];
+                            data[i] = temp;
+                        }
                     }
                 }
+                return data;
             }
-            return data;
+            return null;
+            
         }
     }
 }
