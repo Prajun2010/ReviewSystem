@@ -1,1 +1,1 @@
-Environment Ratings,Nepal,Game Rating,Jam Rating,Danger Rating,
+Environment Ratings,Nepal,Game Rating,Jam Rating,Danger Rating,Prajun,Hello,Ansul,

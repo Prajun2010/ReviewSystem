@@ -63,7 +63,16 @@ namespace ResortReview
                     {
                         if (prop.Name != "AllRatings")
                         {
-                            row[prop.Name] = prop.GetValue(item);
+                            if (prop.Name == "RatingDate")
+                            {
+                                DateTime Date = (DateTime)prop.GetValue(item);
+                                string ConvertedDate = Date.ToString("yyyy/MM/d");
+                                row[prop.Name] = ConvertedDate;
+                            }
+                            else {
+                                row[prop.Name] = prop.GetValue(item);
+                            }
+                            
                         }
                         else
                         {
@@ -127,6 +136,20 @@ namespace ResortReview
             return CriteriaCollection;
         }
 
+        private void SortBtn_Click(object sender, EventArgs e)
+        {
+            CustomerReview cr = new CustomerReview();
+            List<CustomerReview> review = cr.ReviewList();
+            DataTable sortedTable = ConvertToDataTable(cr.SortData(review));
+            customerReviewData.DataSource = sortedTable;
+        }
 
+        private void resetBtn_Click(object sender, EventArgs e)
+        {
+            CustomerReview cr = new CustomerReview();
+            List<CustomerReview> review = cr.ReviewList();
+            DataTable resetTable = ConvertToDataTable(review);
+            customerReviewData.DataSource = resetTable;
+        }
     }
 }

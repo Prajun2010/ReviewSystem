@@ -13,9 +13,11 @@ namespace ResortReview
     public partial class CriteriaControl : UserControl
     {
         string path = "CriteriaCollection.txt";
+      
         public CriteriaControl()
         {
             InitializeComponent();
+           
         }
         //
         //Method for writing specified criteria in criteriacollection json file.
@@ -23,7 +25,7 @@ namespace ResortReview
         private void CriteriaBtn_Click(object sender, EventArgs e)
         {
             // storing criteria title for cheking redudancy
-            List<string> CriteriaCollection;   
+            List<string> CriteriaCollection;
 
             //Reading previous criteria title before adding new criteria to the file.
             //Helps to determine whether the specified criteria is already contained or not.

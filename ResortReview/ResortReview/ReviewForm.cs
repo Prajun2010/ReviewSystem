@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.Text.RegularExpressions;
 
 namespace ResortReview
 {
@@ -154,6 +155,20 @@ namespace ResortReview
         {
             MinimizeLbl.ForeColor = Color.Orange;
         }
+
+        private void customerNumberBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)) {
+                e.Handled = true;
+            }
+        }
+
+        private void customerNameBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar)) {
+                e.Handled = true;
+            }
+        }
         //
         //This method is created to store criteria title as key and it's rating as value in dictionary 
         //
@@ -174,7 +189,7 @@ namespace ResortReview
             cr.CustomerNumber = customerNumberBox.Text;
             cr.Suggesstions = suggestionBox.Text;
             cr.AllRatings = Criteria_Value;
-            cr.RatingDate = DateTime.Now.ToString("yyyy/MM/d");
+            cr.RatingDate = DateTime.Now;
             cr.RatingTime = DateTime.Now.ToString("hh:m tt");
             string response = cr.SaveReview(cr);
             if (response == "Success") {

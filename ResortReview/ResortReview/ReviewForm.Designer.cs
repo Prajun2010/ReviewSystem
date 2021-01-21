@@ -176,6 +176,7 @@
             this.customerEmailBox.Name = "customerEmailBox";
             this.customerEmailBox.Size = new System.Drawing.Size(251, 24);
             this.customerEmailBox.TabIndex = 4;
+            
             // 
             // CustomerEmail
             // 
@@ -198,6 +199,7 @@
             this.customerNumberBox.Name = "customerNumberBox";
             this.customerNumberBox.Size = new System.Drawing.Size(261, 24);
             this.customerNumberBox.TabIndex = 5;
+            this.customerNumberBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.customerNumberBox_KeyPress);
             // 
             // CustomerNumber
             // 
@@ -220,6 +222,7 @@
             this.customerNameBox.Name = "customerNameBox";
             this.customerNameBox.Size = new System.Drawing.Size(524, 24);
             this.customerNameBox.TabIndex = 3;
+            this.customerNameBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.customerNameBox_KeyPress);
             // 
             // CustomerName
             // 
@@ -334,7 +337,7 @@
             this.cutomerBanner.TabIndex = 0;
             this.cutomerBanner.TabStop = false;
             // 
-            // Customer
+            // ReviewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -345,7 +348,7 @@
             this.Controls.Add(this.cutomerBanner);
             this.Controls.Add(this.customerControlBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Customer";
+            this.Name = "ReviewForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Customer";
             this.customerControlBox.ResumeLayout(false);

@@ -14,8 +14,8 @@ namespace ResortReview
         public string CustomerEmail { get; set; }
         public string CustomerNumber { get; set; }
         public string Suggesstions { get; set; }
-        public string RatingDate { get; set; }
-        public string RatingTime { get; set; }
+        public DateTime RatingDate { get; set; }
+        public String RatingTime { get; set; }
         public Dictionary<string, int> AllRatings { get; set; }
 
         public string SaveReview(CustomerReview cr) {
@@ -24,13 +24,32 @@ namespace ResortReview
             return "Success";
         }
 
-        public List<CustomerReview> ReviewList() {
+        public List<CustomerReview> ReviewList()
+        {
             string data = ReadWrite.ReadFromText(path);
-            if (data != null) {
+            if (data != null)
+            {
                 List<CustomerReview> reviewCollection = JsonConvert.DeserializeObject<List<CustomerReview>>(data);
                 return reviewCollection;
             }
             return null;
+        }
+
+        public List<CustomerReview> SortData(List<CustomerReview> data) {
+            CustomerReview temp;
+            for (int j = 0; j <= data.Count - 2; j++)
+            {
+                for (int i = 0; i <= data.Count - 2; i++)
+                {
+                    if (data[i].RatingDate > data[i + 1].RatingDate)
+                    {
+                        temp = data[i + 1];
+                        data[i + 1] = data[i];
+                        data[i] = temp;
+                    }
+                }
+            }
+            return data;
         }
     }
 }
