@@ -76,12 +76,6 @@
       <DependentUpon>ReviewForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomerReview.cs" />
-    <Compile Include="Help.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Help.Designer.cs">
-      <DependentUpon>Help.cs</DependentUpon>
-    </Compile>
     <Compile Include="CriteriaTiles.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -96,11 +90,11 @@
       <DependentUpon>PassControl.cs</DependentUpon>
     </Compile>
     <Compile Include="ReadWrite.cs" />
-    <Compile Include="Role.cs">
+    <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Role.Designer.cs">
-      <DependentUpon>Role.cs</DependentUpon>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Splashscreen.cs">
       <SubType>Form</SubType>
@@ -122,17 +116,14 @@
     <EmbeddedResource Include="ReviewForm.resx">
       <DependentUpon>ReviewForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Help.resx">
-      <DependentUpon>Help.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CriteriaTiles.resx">
       <DependentUpon>CriteriaTiles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PassControl.resx">
       <DependentUpon>PassControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Role.resx">
-      <DependentUpon>Role.cs</DependentUpon>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Splashscreen.resx">
       <DependentUpon>Splashscreen.cs</DependentUpon>

@@ -52,7 +52,7 @@ namespace ResortReview
         // method for running next thread
         //
         private void NextPage() {
-            Application.Run(new Role());
+            Application.Run(new Login());
         }
        
     }

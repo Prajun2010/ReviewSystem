@@ -56,7 +56,7 @@ namespace ResortReview
         }
 
         private void NextPage() {
-            Application.Run(new Role());
+            Application.Run(new Login());
         }
 
         private void AdminTitleBar_MouseDown(object sender, MouseEventArgs e)

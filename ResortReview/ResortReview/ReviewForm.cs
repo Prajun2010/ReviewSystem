@@ -91,7 +91,7 @@ namespace ResortReview
         // Running Role form after closing this form.
         //
         private void NextPage() {
-            Application.Run(new Role());
+            Application.Run(new Login());
         }
         //
         //

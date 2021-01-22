@@ -28,10 +28,9 @@ namespace ResortReview
             DataTable dt = ConvertToDataTable(Review_Of_Customer);
             customerReviewData.DataSource = dt;
             customerReviewData.RowHeadersVisible = false;
-            customerReviewData.RowHeadersWidth = 100;
 
-            Dictionary<string,int> chartData = Chart(Review_Of_Customer);
-            foreach(KeyValuePair<string,int> chart_data in chartData){
+            Dictionary<string,int> chartDataFinal = Chart(Review_Of_Customer);
+            foreach(KeyValuePair<string,int> chart_data in chartDataFinal){
                 RatingGraph.Series["Customers Rating"].Points.AddXY(chart_data.Key, chart_data.Value);
             }
         }
@@ -104,6 +103,7 @@ namespace ResortReview
                                 if (ChartData.ContainsKey(ratingData.Key))
                                 {
                                     ChartData[ratingData.Key] = ChartData[ratingData.Key] + ratingData.Value;
+                                    
                                 }
                                 else {
                                     ChartData.Add(ratingData.Key, ratingData.Value);
