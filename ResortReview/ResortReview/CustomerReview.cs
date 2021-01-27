@@ -15,7 +15,7 @@ namespace ResortReview
         public string CustomerNumber { get; set; }
         public string Suggesstions { get; set; }
         public DateTime RatingDate { get; set; }
-        public String RatingTime { get; set; }
+        public DateTime RatingTime { get; set; }
         public Dictionary<string, int> AllRatings { get; set; }
 
         public string SaveReview(CustomerReview cr) {

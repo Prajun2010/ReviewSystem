@@ -199,7 +199,7 @@
             this.customerNumberBox.Name = "customerNumberBox";
             this.customerNumberBox.Size = new System.Drawing.Size(261, 24);
             this.customerNumberBox.TabIndex = 5;
-            this.customerNumberBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.customerNumberBox_KeyPress);
+            this.customerNumberBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CustomerNumberBox_KeyPress);
             // 
             // CustomerNumber
             // 
@@ -222,7 +222,7 @@
             this.customerNameBox.Name = "customerNameBox";
             this.customerNameBox.Size = new System.Drawing.Size(524, 24);
             this.customerNameBox.TabIndex = 3;
-            this.customerNameBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.customerNameBox_KeyPress);
+            this.customerNameBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CustomerNameBox_KeyPress);
             // 
             // CustomerName
             // 

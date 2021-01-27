@@ -21,24 +21,31 @@ namespace ResortReview
            
         }
 
+        // this method is responsible for displaying datatable and chart.
         public void ResortAnalysis()
         {
             CustomerReview review = new CustomerReview();
             List<CustomerReview> Review_Of_Customer = review.ReviewList();
+
+            // for datatable 
             DataTable dt = ConvertToDataTable(Review_Of_Customer);
             customerReviewData.DataSource = dt;
             customerReviewData.RowHeadersVisible = false;
 
+            //for chart 
             Dictionary<string,int> chartDataFinal = Chart(Review_Of_Customer);
             foreach(KeyValuePair<string,int> chart_data in chartDataFinal){
                 RatingGraph.Series["Customers Rating"].Points.AddXY(chart_data.Key, chart_data.Value);
             }
         }
+        //
+        //method for returning datatable.
+        //
         public static DataTable ConvertToDataTable(List<CustomerReview> review)
         {
             PropertyDescriptorCollection properties = TypeDescriptor.GetProperties(typeof(CustomerReview));
             DataTable table = new DataTable();
-
+            // to add column header 
             foreach (PropertyDescriptor prop in properties)
             {
                 if (prop.Name != "AllRatings")
@@ -54,7 +61,7 @@ namespace ResortReview
                     }
                 }
             }
-
+            // data is added to row over here 
             if (review != null)
             {
                 foreach (CustomerReview item in review)
@@ -64,13 +71,22 @@ namespace ResortReview
                     {
                         if (prop.Name != "AllRatings")
                         {
-                            if (prop.Name == "RatingDate")
+                            if (prop.Name == "RatingDate" || prop.Name == "RatingTime") 
                             {
                                 DateTime Date = (DateTime)prop.GetValue(item);
-                                string ConvertedDate = Date.ToString("yyyy/MM/d");
-                                row[prop.Name] = ConvertedDate;
+                                if (prop.Name == "RatingDate") { // date format 
+                                    
+                                    string ConvertedDate = Date.ToString("yyyy/MM/d");
+                                    row[prop.Name] = ConvertedDate;
+
+                                } else if (prop.Name == "RatingTime") { // time format 
+                                    
+                                    string ConvertedTime = Date.ToString("hh:mm tt");
+                                    row[prop.Name] = ConvertedTime;
+                                }
+                                
                             }
-                            else {
+                            else { 
                                 row[prop.Name] = prop.GetValue(item);
                             }
                             
@@ -160,7 +176,7 @@ namespace ResortReview
         //
         // method for reseting review list
         //
-        private void resetBtn_Click(object sender, EventArgs e)
+        private void ResetBtn_Click(object sender, EventArgs e)
         {
             if (resetStatus == false) {
                 sortStatus = false;

@@ -117,7 +117,7 @@
             this.resetBtn.TabIndex = 7;
             this.resetBtn.Text = "Reset Data";
             this.resetBtn.UseVisualStyleBackColor = false;
-            this.resetBtn.Click += new System.EventHandler(this.resetBtn_Click);
+            this.resetBtn.Click += new System.EventHandler(this.ResetBtn_Click);
             // 
             // Dashboard
             // 

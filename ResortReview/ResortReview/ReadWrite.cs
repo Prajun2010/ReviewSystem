@@ -24,10 +24,10 @@ namespace ResortReview
                 }
                 if (format != 0)
                 {
-                    writer.Write(data);
+                    writer.Write(data); // this is for admin credential(requires format 1 to initiate this condition)
                 }
                 else {
-                    writer.WriteLine(data);
+                    writer.WriteLine(data); // for customer feedback
                 }
                 
             }
